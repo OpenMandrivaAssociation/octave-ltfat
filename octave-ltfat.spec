@@ -4,12 +4,12 @@ Summary:	The Large Time-Frequency Analysis Toolbox
 Name:		octave-%{octpkg}
 Version:	2.3.1
 Release:	1
+Url:		https://octave.sourceforge.io/%{octpkg}/
 Source0:	http://downloads.sourceforge.net/octave/%{octpkg}-%{version}.tar.gz
 # https://github.com/ltfat/ltfat/pull/116
 Patch0:		%{name}-2.3.1-fix_typo.patch
 License:	GPLv3+
 Group:		Sciences/Mathematics
-Url:		https://octave.sourceforge.io/%{octpkg}/
 
 BuildRequires:	octave-devel > 3.8.0
 BuildRequires:	libfftw-devel
