@@ -3,16 +3,16 @@
 Summary:	The Large Time-Frequency Analysis Toolbox
 Name:		octave-%{octpkg}
 Version:	2.3.1
-Release:	1
+Release:	2
 Url:		https://octave.sourceforge.io/%{octpkg}/
-Source0:	http://downloads.sourceforge.net/octave/%{octpkg}-%{version}.tar.gz
+Source0:	https://downloads.sourceforge.net/octave/%{octpkg}-%{version}.tar.gz
 # https://github.com/ltfat/ltfat/pull/116
 Patch0:		%{name}-2.3.1-fix_typo.patch
 License:	GPLv3+
 Group:		Sciences/Mathematics
 
 BuildRequires:	octave-devel > 3.8.0
-BuildRequires:	libfftw-devel
+BuildRequires:	pkgconfig(fftw3)
 BuildRequires:	pkgconfig(portaudio-2.0)
 
 Requires:	octave(api) = %{octave_api}
