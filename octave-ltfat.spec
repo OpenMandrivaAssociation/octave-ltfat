@@ -4,7 +4,7 @@ Summary:	The Large Time-Frequency Analysis Toolbox
 Name:		octave-%{octpkg}
 Version:	2.3.1
 Release:	2
-Url:		https://octave.sourceforge.io/%{octpkg}/
+Url:		https://packages.octave.org/%{octpkg}/
 Source0:	https://downloads.sourceforge.net/octave/%{octpkg}-%{version}.tar.gz
 # https://github.com/ltfat/ltfat/pull/116
 Patch0:		%{name}-2.3.1-fix_typo.patch
@@ -27,8 +27,6 @@ is intended both as an educational and a computational tool. The toolbox
 provides a large number of linear transforms including Gabor and wavelet
 transforms along with routines for constructing windows (filter prototypes)
 and routines for manipulating coefficients.
-
-This package is part of external Octave-Forge collection.
 
 %files
 %license COPYING
