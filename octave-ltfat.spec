@@ -1,17 +1,16 @@
-%define octpkg ltfat
+%global octpkg ltfat
 
-Summary:	The Large Time-Frequency Analysis Toolbox
-Name:		octave-%{octpkg}
-Version:	2.3.1
-Release:	2
-Url:		https://packages.octave.org/%{octpkg}/
-Source0:	https://downloads.sourceforge.net/octave/%{octpkg}-%{version}.tar.gz
-# https://github.com/ltfat/ltfat/pull/116
-Patch0:		%{name}-2.3.1-fix_typo.patch
+Summary:	The Large Time-Frequency Analysis Toolbox for Octave
+Name:		octave-ltfat
+Version:	2.5.0
+Release:	1
 License:	GPLv3+
 Group:		Sciences/Mathematics
+#Url:		https://packages.octave.org/ltfat/
+Url:		https://github.com/ltfat/ltfat/
+Source0:	https://github.com/ltfat/ltfat/releases/download/v%{version}/ltfat-%{version}-of.tar.gz
 
-BuildRequires:	octave-devel > 3.8.0
+BuildRequires:  octave-devel >= 5.0.0
 BuildRequires:	pkgconfig(fftw3)
 BuildRequires:	pkgconfig(portaudio-2.0)
 
@@ -21,28 +20,25 @@ Requires(post): octave
 Requires(postun): octave
 
 %description
-The Large Time/Frequency Analysis Toolbox (LTFAT) is a Matlab/Octave toolbox
-for working with time-frequency analysis, wavelets and signal processing. It
-is intended both as an educational and a computational tool. The toolbox
-provides a large number of linear transforms including Gabor and wavelet
-transforms along with routines for constructing windows (filter prototypes)
-and routines for manipulating coefficients.
+The Large Time/Frequency Analysis Toolbox (LTFAT) is a Matlab/Octave
+toolbox for working with time-frequency analysis and synthesis. It is
+intended both as an educational and a computational tool. The toolbox
+provides a large number of linear transforms including Gabor and
+wavelet transforms along with routines for constructing windows
+(filter prototypes) and routines for manipulating coefficients.
 
 %files
 %license COPYING
 %doc NEWS
-%dir %{octpkglibdir}
-%{octpkglibdir}/*
 %dir %{octpkgdir}
 %{octpkgdir}/*
+%dir %{octpkglibdir}
+%{octpkglibdir}/*
 
 #---------------------------------------------------------------------------
 
 %prep
 %autosetup -p1 -n %{octpkg}
-
-# remove backup files
-find . -name \*~ -delete
 
 %build
 %set_build_flags
