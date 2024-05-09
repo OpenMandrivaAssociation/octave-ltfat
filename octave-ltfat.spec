@@ -3,7 +3,7 @@
 Summary:	The Large Time-Frequency Analysis Toolbox for Octave
 Name:		octave-ltfat
 Version:	2.6.0
-Release:	1
+Release:	2
 License:	GPLv3+
 Group:		Sciences/Mathematics
 #Url:		https://packages.octave.org/ltfat/
