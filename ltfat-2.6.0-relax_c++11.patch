@@ -28,8 +28,8 @@
  LFLAGS = -Wl,--no-undefined -Lbuild/$(CROSS) $(OPTLPATH) -Wl,-rpath,$$ORIGIN
  
  MATLABROOT ?= /usr/local/MATLAB_R2017a
---- a/src/polyboolclipper/Makefile_unixoct
-+++ b/src/polyboolclipper/Makefile_unixoct
+--- a/thirdparty/polyboolclipper/Makefile_unixoct
++++ b/thirdparty/polyboolclipper/Makefile_unixoct
 @@ -4,7 +4,7 @@ EXT?=mex
  
  include ../../src/ostools.mk
