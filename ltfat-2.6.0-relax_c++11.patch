@@ -1,3 +1,14 @@
+--- a/oct/Makefile_unix
++++ b/oct/Makefile_unix
+@@ -33,7 +33,7 @@ ifndef FFTW_LIBS
+ FFTW_LIBS := $(shell $(MKOCTFILE) -p FFTW_LIBS)
+ endif
+ 
+-export CXXFLAGS := $(shell $(MKOCTFILE) -p CXXFLAGS) -std=gnu++11 -Wall -DLTFAT_LARGEARRAYS $(OPTCXXFLAGS)
++export CXXFLAGS := $(shell $(MKOCTFILE) -p CXXFLAGS) -Wall -DLTFAT_LARGEARRAYS $(OPTCXXFLAGS)
+ # export is necessary, otherwise LFLAGS won't have any effect
+ # at least on Windows and on Mac
+ export LDFLAGS := -L$(shell $(MKOCTFILE) -p LIBDIR) $(FLIBS) $(LAPACK_LIBS) $(BLAS_LIBS) $(FFTW_LIBS) 
 --- a/src/examples/Makefile
 +++ b/src/examples/Makefile
 @@ -1,4 +1,4 @@
