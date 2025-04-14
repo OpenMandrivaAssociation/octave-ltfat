@@ -19,6 +19,9 @@ Requires:	octave(api) = %{octave_api}
 Requires(post): octave
 Requires(postun): octave
 
+%patchlist
+ltfat-2.6.0-relax_c++11.patch
+
 %description
 The Large Time/Frequency Analysis Toolbox (LTFAT) is a Matlab/Octave
 toolbox for working with time-frequency analysis and synthesis. It is

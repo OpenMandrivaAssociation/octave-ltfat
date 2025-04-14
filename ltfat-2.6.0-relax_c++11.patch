@@ -1,0 +1,41 @@
+--- a/src/examples/Makefile
++++ b/src/examples/Makefile
+@@ -1,4 +1,4 @@
+-CFLAGS+=-g -Wall -Wextra -std=c++11
++CFLAGS+=-g -Wall -Wextra
+ 
+ SRC=$(wildcard *.c)
+ PROGS = $(patsubst %.c,%,$(SRC))
+--- a/src/Makefile_libltfat
++++ b/src/Makefile_libltfat
+@@ -39,7 +39,7 @@ endif
+ 
+ # Base CFLAGS
+ CFLAGS+=-Wall -Wextra -std=c99
+-CXXFLAGS+=-Wall -Wextra -std=c++11 -fno-exceptions -fno-rtti
++CXXFLAGS+=-Wall -Wextra -fno-exceptions -fno-rtti
+ LFLAGS = -Wl,--no-undefined -Lbuild/$(CROSS) $(OPTLPATH) -Wl,-rpath,$$ORIGIN
+ 
+ MATLABROOT ?= /usr/local/MATLAB_R2017a
+--- a/src/Makefile
++++ b/src/Makefile
+@@ -39,7 +39,7 @@ endif
+ 
+ # Base CFLAGS
+ CFLAGS+=-Wall -Wextra -std=c99
+-CXXFLAGS+=-Wall -Wextra -std=c++11 -fno-exceptions -fno-rtti
++CXXFLAGS+=-Wall -Wextra -fno-exceptions -fno-rtti
+ LFLAGS = -Wl,--no-undefined -Lbuild/$(CROSS) $(OPTLPATH) -Wl,-rpath,$$ORIGIN
+ 
+ MATLABROOT ?= /usr/local/MATLAB_R2017a
+--- a/src/polyboolclipper/Makefile_unixoct
++++ b/src/polyboolclipper/Makefile_unixoct
+@@ -4,7 +4,7 @@ EXT?=mex
+ 
+ include ../../src/ostools.mk
+ 
+-export CXXFLAGS := $(shell $(MKOCTFILE) -p CXXFLAGS) -std=c++11
++export CXXFLAGS := $(shell $(MKOCTFILE) -p CXXFLAGS)
+ 
+ all:
+ 	$(MKOCTFILE) -Wall -mex polyboolmex.cpp clipper.cpp
